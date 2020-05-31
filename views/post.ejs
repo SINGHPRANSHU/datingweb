@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+</head>
+<body>
+    <p>your token is:</p>
+    <p id="token"><%=p%></p>
+    <br/> <br/>
+    <br/> <br/>
+    <br/>
+    <br/>
+    <br/>
+    <center><p><%=use.username%></p>
+        <img src=<%=use.imgsrc%> width="300" height="300"></center>
+    
+    <script>
+        document.getElementById("token").style({"visbility":"null"});
+       token=document.getElementById("token").innerHTML;
+    window.localStorage.setItem('token',token);
+    
+    </script>
+    <div class="container jumbotron">
+   <form action="/posts" method="POST" >
+    <p>please do not change the text below,just start searching for match</p>
+    <input type="text" name="token" value=<%=p%> 
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <input type="submit" value="search for match" class="btn btn-large btn-primary">
+   </form>
+    </div>
+  
+  
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datingapp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container jumbotron">
+       
+<center> 
+  <% users.forEach((user)=>{%>
+ 
+    
+         <h3 id=<%=user._id%>><%=user.username%></h3>
+         <img src=<%=user.imgsrc %> width="300" height="300" >
+     
+      <form action="/people" method="POST">
+        <h3 >his/her user id is</h3>
+        <h3 name="_id"><%=user._id%></h3>
+        <input type="submit" value="like" >
+      </form>
+  <% });%>
+</center>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+       
+           
+            const socket=io.connect();
+           
+            
+           
+
+        
+        
+        
+    </script>
+  
+</body>
+</html>
